@@ -63,6 +63,8 @@ async function seedCustomers() {
       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
       email VARCHAR(255) NOT NULL,
+      company VARCHAR(255),
+      phone VARCHAR(255),
       image_url VARCHAR(255) NOT NULL
     );
   `;
@@ -71,7 +73,7 @@ async function seedCustomers() {
     customers.map(
       (customer) => client.sql`
         INSERT INTO customers (id, name, email, image_url)
-        VALUES (${customer.id}, ${customer.name}, ${customer.email}, ${customer.image_url})
+        VALUES (${customer.id}, ${customer.name}, ${customer.email}, ${customer.company}, ${customer.phone}, ${customer.image_url})
         ON CONFLICT (id) DO NOTHING;
       `,
     ),

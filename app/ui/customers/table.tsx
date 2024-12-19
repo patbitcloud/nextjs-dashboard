@@ -42,6 +42,12 @@ export default async function CustomersTable({
                           </div>
                         </div>
                         <p className="text-sm text-gray-500">
+                          {customer.company}
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          {customer.phone}
+                        </p>
+                        <p className="text-sm text-gray-500">
                           {customer.email}
                         </p>
                       </div>
@@ -69,10 +75,16 @@ export default async function CustomersTable({
                       Name
                     </th>
                     <th scope="col" className="px-3 py-5 font-medium">
+                      Company
+                    </th>
+                    <th scope="col" className="px-3 py-5 font-medium">
+                      Phone
+                    </th>
+                    <th scope="col" className="px-3 py-5 font-medium">
                       Email
                     </th>
                     <th scope="col" className="px-3 py-5 font-medium">
-                      Total Invoices
+                      Total Contacts
                     </th>
                     <th scope="col" className="px-3 py-5 font-medium">
                       Total Pending
@@ -97,6 +109,12 @@ export default async function CustomersTable({
                           />
                           <p>{customer.name}</p>
                         </div>
+                      </td>
+                      <td className="whitespace-nowrap bg-white px-3 py-5 text-sm">
+                        {customer.company}
+                      </td>
+                      <td className="whitespace-nowrap bg-white px-3 py-5 text-sm">
+                        {customer.phone}
                       </td>
                       <td className="whitespace-nowrap bg-white px-4 py-5 text-sm">
                         {customer.email}
